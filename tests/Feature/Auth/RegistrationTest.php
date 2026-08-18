@@ -24,7 +24,7 @@ test('guests can create an account', function () {
         ->set('password_confirmation', 'password')
         ->call('register')
         ->assertHasNoErrors()
-        ->assertRedirect(route('home'));
+        ->assertRedirect(route('verification.notice'));
 
     $user = User::query()->where('email', 'jane@example.com')->firstOrFail();
 

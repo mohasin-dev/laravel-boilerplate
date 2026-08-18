@@ -21,7 +21,13 @@ Logout is a `POST` request protected by the `auth` and CSRF middleware. It logs 
 
 ## Registration
 
-Guests can create an account at `/register`. Registration validates unique lowercase email addresses and confirmed passwords using Laravel's configured password defaults. The `RegisterUser` Action normalizes input, securely hashes the password, creates an active user, and dispatches Laravel's `Registered` event. The new account is authenticated with a regenerated session.
+Guests can create an account at `/register`. Registration validates unique lowercase email addresses and confirmed passwords using Laravel's configured password defaults. The `RegisterUser` Action normalizes input, securely hashes the password, creates an active user, and dispatches Laravel's `Registered` event. The new account is authenticated with a regenerated session and sent to the verification notice.
+
+## Email verification
+
+Users implement Laravel's `MustVerifyEmail` contract. Verification links use Laravel's temporary signed URL and are throttled at the route. Users can request up to three additional verification emails per minute from the notice screen. Successful verification dispatches Laravel's `Verified` event and redirects home.
+
+Applications should apply Laravel's `verified` middleware to routes that require a confirmed email address.
 
 ## Extension points
 

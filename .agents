@@ -35,4 +35,5 @@
 - Completed: development and code-quality tooling.
 - Completed: session login and logout.
 - Completed: user registration.
-- Next: email verification.
+- Completed: email verification.
+- Next: password reset.

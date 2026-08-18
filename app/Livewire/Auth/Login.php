@@ -4,7 +4,9 @@ namespace App\Livewire\Auth;
 
 use App\Actions\Auth\LoginUser;
 use App\DTOs\Auth\LoginData;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Str;
 use Livewire\Attributes\Layout;
@@ -54,6 +56,14 @@ final class Login extends Component
 
         RateLimiter::clear($throttleKey);
         session()->regenerate();
+
+        $user = Auth::guard('web')->user();
+
+        if ($user instanceof MustVerifyEmail && ! $user->hasVerifiedEmail()) {
+            $this->redirectRoute('verification.notice', navigate: true);
+
+            return;
+        }
 
         $this->redirectIntended(route('home'), navigate: true);
     }

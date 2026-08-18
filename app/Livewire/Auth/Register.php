@@ -37,7 +37,7 @@ final class Register extends Component
         Auth::guard('web')->login($user);
         session()->regenerate();
 
-        $this->redirectRoute('home', navigate: true);
+        $this->redirectRoute('verification.notice', navigate: true);
     }
 
     public function render(): View
