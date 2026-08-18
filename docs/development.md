@@ -8,7 +8,7 @@ The project keeps its local and CI workflows in Composer and npm scripts so cont
 composer setup
 ```
 
-This installs locked PHP and JavaScript dependencies, creates `.env` when needed, generates the application key, runs migrations, and builds frontend assets. Configure the database values in `.env` before running setup when the default MySQL connection is not available.
+This installs locked PHP and JavaScript dependencies, creates `.env` when needed, generates the application key, runs migrations, and builds frontend assets. Create the configured MySQL database before running setup.
 
 ## Local development
 
@@ -34,6 +34,6 @@ Run the complete local quality gate with:
 composer check
 ```
 
-CI calls `composer ci:check`, which delegates to the same quality gate. The GitHub Actions workflow uses SQLite for isolation while MySQL remains the documented application default.
+CI calls `composer ci:check`, which delegates to the same quality gate. The GitHub Actions workflow provisions an isolated MySQL 8.4 service and uses the `laravel_boilerplate_testing` database.
 
 The PHP checks run in a single process so the same commands also work in containers and restricted development environments that do not allow local worker sockets.
