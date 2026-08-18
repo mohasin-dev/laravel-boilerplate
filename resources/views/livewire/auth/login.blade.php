@@ -47,5 +47,14 @@
                 <span wire:loading wire:target="authenticate">{{ __('Signing in…') }}</span>
             </x-ui.button>
         </form>
+
+        <x-slot:footer>
+            <p class="text-center text-sm text-slate-600 dark:text-slate-300">
+                {{ __('Need an account?') }}
+                <a href="{{ route('register') }}" wire:navigate class="font-semibold text-indigo-600 hover:text-indigo-500 dark:text-indigo-400">
+                    {{ __('Register') }}
+                </a>
+            </p>
+        </x-slot:footer>
     </x-ui.card>
 </div>

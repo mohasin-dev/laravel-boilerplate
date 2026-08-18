@@ -34,4 +34,5 @@
 - Completed: reusable UI component foundation.
 - Completed: development and code-quality tooling.
 - Completed: session login and logout.
-- Next: user registration.
+- Completed: user registration.
+- Next: email verification.
