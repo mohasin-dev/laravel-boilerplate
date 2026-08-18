@@ -19,9 +19,18 @@
                     <x-application-logo />
                 </a>
 
-                <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300">
-                    {{ __('Community boilerplate') }}
-                </span>
+                @auth
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <x-ui.button type="submit" variant="ghost" size="sm">{{ __('Log out') }}</x-ui.button>
+                    </form>
+                @else
+                    @if (! request()->routeIs('login'))
+                        <x-ui.button href="{{ route('login') }}" variant="secondary" size="sm" wire:navigate>
+                            {{ __('Log in') }}
+                        </x-ui.button>
+                    @endif
+                @endauth
             </nav>
         </header>
 

@@ -33,4 +33,5 @@
 - Completed: base application layout.
 - Completed: reusable UI component foundation.
 - Completed: development and code-quality tooling.
-- Next: authentication foundation.
+- Completed: session login and logout.
+- Next: user registration.
