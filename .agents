@@ -30,4 +30,5 @@
 
 - Completed: configuration and environment foundation.
 - Completed: database foundation.
-- Next: base application layout.
+- Completed: base application layout.
+- Next: reusable UI component foundation.
