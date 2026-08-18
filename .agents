@@ -1,0 +1,33 @@
+# AI Agent Instructions
+
+`plan.md` is the source of truth for this project. Read the relevant section before implementing a feature.
+
+## Workflow
+
+1. Inspect existing behavior before changing code.
+2. Implement one feature at a time in the phase order defined in `plan.md`.
+3. Keep each change focused and preserve working functionality.
+4. Add or update tests for meaningful behavior.
+5. Run Pest, Pint, and PHPStan/Larastan before marking a feature complete.
+6. After a feature passes its quality checks, create a focused Git commit for that feature and push it to the configured remote.
+7. Never include unrelated user changes in the feature commit.
+8. Report the completed feature, commit, and push result, then wait before starting the next feature.
+
+## Architecture
+
+- Prefer Laravel-native conventions and Eloquent.
+- Use Actions for meaningful business operations shared by entry points.
+- Use typed DTOs at meaningful boundaries.
+- Use Services only for genuinely complex workflow orchestration.
+- Use Repositories only for justified data-access complexity.
+- Keep controllers and Livewire components thin.
+- Reuse business logic between Livewire, API, jobs, and commands.
+- Use policies and permissions for protected operations.
+- Do not introduce dependencies or abstractions without a concrete need.
+- Never expose secrets or log passwords, tokens, or other sensitive data.
+
+## Current progress
+
+- Completed: configuration and environment foundation.
+- Completed: database foundation.
+- Next: base application layout.
