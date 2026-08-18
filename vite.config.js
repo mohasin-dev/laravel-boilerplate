@@ -12,6 +12,7 @@ export default defineConfig({
             refresh: true,
             fonts: [
                 bunny('Instrument Sans', {
+                    optimizedFallbacks: false,
                     weights: [400, 500, 600],
                 }),
             ],

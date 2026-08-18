@@ -11,7 +11,7 @@
 5. Run Pest, Pint, and PHPStan/Larastan before marking a feature complete.
 6. After a feature passes its quality checks, create a focused Git commit for that feature and push it to the configured remote.
 7. Never include unrelated user changes in the feature commit.
-8. Report the completed feature, commit, and push result, then wait before starting the next feature.
+8. Report each completed feature, commit, and push result, then continue with the next feature unless the user asks to pause.
 
 ## Architecture
 
@@ -32,4 +32,5 @@
 - Completed: database foundation.
 - Completed: base application layout.
 - Completed: reusable UI component foundation.
-- Next: development and code-quality tooling.
+- Completed: development and code-quality tooling.
+- Next: authentication foundation.
